@@ -14,6 +14,7 @@ const App = () => {
   const dispatch = useDispatch();
 
   useEffect(()=>{
+    console.log(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
     dispatch(checkUserSession());
   }, []);
 

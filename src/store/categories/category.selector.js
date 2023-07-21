@@ -11,7 +11,8 @@ export const selectCurrentCategoryMap = createSelector(
     [selectCategories],
     (categories) => categories.reduce((acc, category) => {
         const { title, items } = category;
-        acc[title.toLowerCase()] = items;
+        const new_items = items.map((item) => ({...item, price : item.price * 20}));
+        acc[title.toLowerCase()] = new_items;
         return acc;
       }, {}),  
 );
